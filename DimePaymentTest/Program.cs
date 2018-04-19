@@ -1,4 +1,6 @@
-﻿using System;
+﻿using log4net;
+using log4net.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,11 @@ namespace DimePaymentTest
         [STAThread]
         static void Main()
         {
+            LogHelper.Info("Application start", null);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmMain());
+            LogHelper.Info("Application end", null);
         }
     }
 }
